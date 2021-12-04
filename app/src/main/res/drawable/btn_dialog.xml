@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <corners android:radius="20dp"/>
+    <solid android:color="@color/white"/>
+    <padding android:top="5dp"/>
+    <padding android:bottom="5dp"/>
+    <size android:height="10dp" />
+    <size android:width="100dp"/>
+    <gradient android:startColor="@color/btnColor" android:centerColor="@color/white" android:endColor="@color/btnColor" android:type="linear" android:angle="5"/>
+
+
+</shape>

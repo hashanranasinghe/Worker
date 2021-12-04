@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="10dp">
+
+
+
+    <TextView
+        android:id="@+id/txtDialogName"
+        android:layout_width="109dp"
+        android:layout_height="36dp"
+        android:text="TextView"
+        android:textSize="20dp"
+        android:fontFamily="@string/font"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="135dp">
+
+        <Button
+            android:id="@+id/updateDialogBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_dialog"
+            android:fontFamily="@string/font"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Update"
+            android:textAllCaps="false"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/paidDialogBtn"
+            app:layout_constraintTop_toBottomOf="@+id/statDialogBtn"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/paidDialogBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_dialog"
+            android:fontFamily="@string/font"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Payment"
+            android:textAllCaps="false"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="67dp">
+
+        <Button
+            android:id="@+id/statDialogBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_dialog"
+            android:fontFamily="@string/font"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Stat"
+            android:textAllCaps="false"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/deleteDialogBtn"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDialogName" />
+
+        <Button
+            android:id="@+id/deleteDialogBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_dialog"
+            android:fontFamily="@string/font"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/paidDialogBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.708"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

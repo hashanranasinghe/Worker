@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Worker</string>
+    <string name="font">"@font/poppins_medium"</string>
+</resources>

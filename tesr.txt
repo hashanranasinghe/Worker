@@ -1,0 +1,98 @@
+package com.example.paidstatapp;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.support.annotation.Nullable;
+
+
+public class DataBaseHelper extends SQLiteOpenHelper {
+
+    public static String MASON_TABLE = "MASON_TABLE";
+    public static final String CARPENTER_TABLE = "CARPENTER_TABLE";
+    public static final String COLUMN_MASON_NAME = "MASON_NAME";
+    public static final String COLUMN_MASON_PHONENUM = "MASON_PHONENUM";
+    public static final String COLUMN_MASON_ADDRESS = "MASON_ADDRESS";
+    public static final String COLUMN_CARPENTER_NAME = "CARPENTER_NAME";
+    public static final String COLUMN_CARPENTER_PHONENUM = "CARPENTER_PHONENUM";
+    public static final String COLUMN_CARPENTER_ADDRESS = "CARPENTER_ADDRESS";
+    public static final String COLUMN_MASON_ID = "MASON_ID";
+    public static final String CARPENTER_ID = "CARPENTER_ID";
+
+    DataClass dataClass = new DataClass();
+    boolean mason = dataClass.isMason();
+    boolean carpenter = dataClass.isCarpenter();
+    
+    public boolean selectCategory(){
+        if(dataClass.isMason()){
+            MASON_TABLE = "m";
+            return Boolean.parseBoolean(MASON_TABLE);
+        }
+        
+    }
+
+
+    public DataBaseHelper(@Nullable Context context) {
+        super(context, "Worker.db", null, 1);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+
+        if (mason == true) {
+
+            String CreateMasonTableStatement = "CREATE TABLE " + MASON_TABLE + " (" + COLUMN_MASON_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_MASON_NAME + " TEXT, " + COLUMN_MASON_PHONENUM + " INT, " + COLUMN_MASON_ADDRESS + " TEXT)";
+            db.execSQL(CreateMasonTableStatement);
+
+        } else if (carpenter == true) {
+
+            String CreateCarpenterTableStatement = "CREATE TABLE " + CARPENTER_TABLE + " (" + CARPENTER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_CARPENTER_NAME + " TEXT, " + COLUMN_CARPENTER_PHONENUM + " INT, " + COLUMN_CARPENTER_ADDRESS + " TEXT)";
+            db.execSQL(CreateCarpenterTableStatement);
+
+        }
+    }
+
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+
+    public boolean addOne(WorkerClass workerClass) {
+
+
+        if (mason == true) {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues cv = new ContentValues();
+            cv.put(COLUMN_MASON_NAME, workerClass.getName());
+            cv.put(COLUMN_MASON_PHONENUM, workerClass.getPhoneNumber());
+            cv.put(COLUMN_MASON_ADDRESS, workerClass.getAddress());
+
+            long insert = db.insert(MASON_TABLE, null, cv);
+            if (insert == -1) {
+                return false;
+            } else {
+                return true;
+            }
+
+        } else if (carpenter == true) {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues cv = new ContentValues();
+            cv.put(COLUMN_CARPENTER_NAME, workerClass.getName());
+            cv.put(COLUMN_CARPENTER_PHONENUM, workerClass.getPhoneNumber());
+            cv.put(COLUMN_CARPENTER_ADDRESS, workerClass.getAddress());
+
+            long insert = db.insert(CARPENTER_TABLE, null, cv);
+            if (insert == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        return true;
+    }
+
+}
