@@ -26,8 +26,6 @@ public class StatisticsActivity extends AppCompatActivity {
     private Button back;
     private TextView txtSum;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +41,6 @@ public class StatisticsActivity extends AppCompatActivity {
         final String id = getIntent().getStringExtra("Id");
         final String name = getIntent().getStringExtra("Name");
 
-
         viewPaymentList(Integer.parseInt(id));
         sum(Integer.parseInt(id));
         PaymentItemClickList(name);
@@ -53,10 +50,14 @@ public class StatisticsActivity extends AppCompatActivity {
 //show all payments of worker
     public void viewPaymentList(int id){
 
-        DataBaseHelper dataBaseHelper = new DataBaseHelper(context);
-        pay = dataBaseHelper.getAllPayments(id);
-        PaymentAdapter paymentAdapter = new PaymentAdapter(context,R.layout.payment_main,pay);
-        ListView.setAdapter(paymentAdapter);
+
+            DataBaseHelper dataBaseHelper = new DataBaseHelper(context);
+            pay = dataBaseHelper.getAllPayments(id);
+            PaymentAdapter paymentAdapter = new PaymentAdapter(context, R.layout.payment_main, pay);
+            ListView.setAdapter(paymentAdapter);
+
+
+
 
     }
 

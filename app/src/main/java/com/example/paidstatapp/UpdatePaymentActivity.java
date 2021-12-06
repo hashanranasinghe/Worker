@@ -61,7 +61,7 @@ public class UpdatePaymentActivity extends AppCompatActivity {
         paymentBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context,StatisticsActivity.class));
+                startActivity(new Intent(context,MainActivity.class));
             }
         });
     }

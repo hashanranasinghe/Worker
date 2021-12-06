@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="5dp"
-
     android:gravity="left">
 
     <androidx.cardview.widget.CardView
@@ -74,9 +73,6 @@
             app:layout_constraintStart_toEndOf="@+id/txtName"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -90,9 +86,6 @@
         android:textAlignment="textStart"
         tools:layout_editor_absoluteX="217dp"
         tools:layout_editor_absoluteY="16dp">
-
-
-
 
         <TextView
             android:id="@+id/category"
@@ -121,15 +114,16 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:fontFamily="@string/font"
+            android:inputType="textPostalAddress"
+            android:minHeight="48dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
             android:text="TextView"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:inputType="textPostalAddress"
             app:layout_constraintEnd_toEndOf="@+id/txtName"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/txtName"
@@ -138,8 +132,5 @@
     </LinearLayout>
     </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>
